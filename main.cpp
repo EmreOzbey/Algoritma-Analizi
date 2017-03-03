@@ -1,23 +1,35 @@
-#include <iostream>
+include <iostream>
 #include <math.h>
-//0(logb) c++
-using namespace std;
 
+using namespace std;
+int static i=0;
 long pow(int x,int n){
-if(n==0) return 1;
-if(n==1) return x;
+if(n==0){
+    i++;
+    return 1;
+}
+if(n==1){
+    i++;
+    return x;
+}
 if(n%2==0){
+    i++;
     return pow(x*x,n/2);
 }
 
 else{
+    i++;
     return pow(x*x,n/2)*x;
 }
+
 }
+
+
 int main()
 {
-    long summary=pow(5,20);
+    long sonuc=pow(3,40);
 
-    cout << "summary= " << summary<< endl;
+    cout << "sonuc= " << sonuc << endl;
+    cout<< "adim sayisi= "<<i<<endl;
     return 0;
 }
