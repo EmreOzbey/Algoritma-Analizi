@@ -1,35 +1,35 @@
-include <iostream>
-#include <math.h>
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
-int static i=0;
-long pow(int x,int n){
-if(n==0){
-    i++;
-    return 1;
-}
-if(n==1){
-    i++;
-    return x;
-}
-if(n%2==0){
-    i++;
-    return pow(x*x,n/2);
-}
 
-else{
-    i++;
-    return pow(x*x,n/2)*x;
-}
-
-}
-
-
-int main()
+int main(int argc, char *argv[])
 {
-    long sonuc=pow(3,40);
-
-    cout << "sonuc= " << sonuc << endl;
-    cout<< "adim sayisi= "<<i<<endl;
-    return 0;
+    int dizi[1000],boyut,i,sag=0,sol=0;
+    cout<<"Dizi boyutunu giriniz"<<endl;
+    cin>>boyut;
+    cout<<boyut;
+    for(i=0;i<boyut;i++)
+    {
+        cout<<"Dizinin"<<i+1<<". elemanini giriniz"<<endl;
+        cin>>dizi[i];              
+    }
+    
+    for(i=(boyut-1)/2;i>=0;i--)
+    {
+                            
+                          cout<<dizi[i]<<"-";
+                          sol=sol+dizi[i];
+                          }
+                          cout<<endl;
+    for(i=boyut/2;i<boyut;i++)
+    {
+       cout<<dizi[i]<<"-";
+       sag=sag+dizi[i];
+    }
+                          cout<<endl;
+                          cout<<sol<<endl<<sag<<endl<<sol+sag<<endl;
+                          
+    system("PAUSE");
+    return EXIT_SUCCESS;
 }
